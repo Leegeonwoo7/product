@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action >
+    <div>등록 지역</div>
+    <div th:each="region:${regions}">
+        <input type="checkbox" th:field="${item.regions}" th:value="${region.key}">
+        <label th:for="${#ids.prev('regions')}" th:text="${region.value}">
+        </label>
+    </div>
+
+    <button type="submit">전송</button>
+</form>
+
+
+</body>
+</html>
