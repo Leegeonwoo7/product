@@ -57,6 +57,13 @@
         </div>
     </div>
 
+    <div>
+        <div>등록 지역</div>
+        <div th:each="itemType:${itemTypes}">
+            <input type="radio" th:field="${item.itemType}" th:value="${itemType.name()}" class="form-check-inline" disabled>
+            <label th:for="${#ids.prev('itemType')}" th:text="${itemType.getDescription()}" class="form-check-label"></label>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col">
