@@ -58,11 +58,18 @@
     </div>
 
     <div>
-        <div>등록 지역</div>
+        <div>상품 종류</div>
         <div th:each="itemType:${itemTypes}">
             <input type="radio" th:field="${item.itemType}" th:value="${itemType.name()}" class="form-check-inline" disabled>
             <label th:for="${#ids.prev('itemType')}" th:text="${itemType.getDescription()}" class="form-check-label"></label>
         </div>
+    </div>
+
+    <div>
+        <div>배송 방식</div>
+        <select th:field="${item.deliveryCode}" disabled>
+            <option th:each="deliveryCode:${deliveryCodes}" th:text="${deliveryCode.displayName}" th:value="${deliveryCode.code}"></option>
+        </select>
     </div>
 
     <div class="row">
